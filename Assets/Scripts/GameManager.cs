@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     Text levelText;
     GameObject levelImage;
     BoardManager boardManager;
-    int level = DEFAULT_LEVEL;
+    public int level = DEFAULT_LEVEL;
     List<EnemyController> enemies;
     bool enemiesMoving;
     bool doingSetup;
@@ -54,7 +54,10 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += delegate (Scene scene, LoadSceneMode mode)
         {
-            level++;
+            if (scene.name == "Main") {
+                level++;
+            }
+            
             InitialiseGame();
         };
     }
@@ -116,5 +119,10 @@ public class GameManager : MonoBehaviour
 
         playersTurn = true;
         enemiesMoving = false;
+    }
+
+    public void clearFoodPoint()
+    {
+        playerFoodPoints = DEFAULT_FOOD_POINTS;
     }
 }
