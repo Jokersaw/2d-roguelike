@@ -3,12 +3,13 @@
 public class EnemyController : MovingObject
 {
     const string PLAYER_TAG = "Player";
-    const string ENEMY_ATTACK_TRIGGER = "enemyAttack";
+   // const string ENEMY_ATTACK_TRIGGER = "enemyAttack";
     public int playerDamage;
     public AudioClip enemyAttack1;
 		public AudioClip enemyAttack2;
+    
 
-    Animator animator;
+   Animator animator;
     Transform target;
     bool skipMove;
 
@@ -53,7 +54,7 @@ public class EnemyController : MovingObject
     protected override void OnCantMove<T>(T component)
     {
         PlayerController hitPlayer = component as PlayerController;
-        animator.SetTrigger(ENEMY_ATTACK_TRIGGER);
+      //  animator.SetTrigger(ENEMY_ATTACK_TRIGGER);
         SoundManager.instance.RandomizeSfx(enemyAttack1, enemyAttack2);
         hitPlayer.LoseFood(playerDamage);
     }

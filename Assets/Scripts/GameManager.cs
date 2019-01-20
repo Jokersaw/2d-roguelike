@@ -62,7 +62,16 @@ public class GameManager : MonoBehaviour
         };
     }
 
-    void InitialiseGame()
+
+    public void Restart()
+    {
+        instance = new GameManager();
+        level = 0;
+        playerFoodPoints = DEFAULT_FOOD_POINTS;
+        playersTurn = true;
+    }
+
+    public void InitialiseGame()
     {
         doingSetup = true;
         levelImage = GameObject.Find(LEVEL_IMAGE_NAME);
@@ -86,6 +95,10 @@ public class GameManager : MonoBehaviour
         levelImage.SetActive(true);
         levelText.text = string.Format(GAME_OVER_TEXT_FORMAT, level);
         enabled = false;
+        SceneManager.LoadScene("EndGame");
+        level = 0;
+        playerFoodPoints = DEFAULT_FOOD_POINTS;
+        playersTurn = true;
     }
 
     public void Update()

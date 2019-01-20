@@ -17,8 +17,12 @@ public class ProgressLoader : MonoBehaviour {
     {
         StartCoroutine(LoadAsynchronously(sceneIndex));
 
+       
+        GameManager.instance.Restart();
         GameManager.instance.level = 0;
         GameManager.instance.clearFoodPoint();
+        GameManager.instance.playersTurn = true;
+        GameManager.instance.InitialiseGame();
         StartGameButton.SetActive(false);
         ExitButton.SetActive(false);
         SliderObject.SetActive(true);

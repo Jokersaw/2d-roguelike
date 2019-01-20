@@ -11,9 +11,9 @@ public class PlayerController : MovingObject
     const string EXIT_TAG = "Exit";
     const string FOOD_TAG = "Food";
     const string SODA_TAG = "Soda";
-    const string FOOD_GAIN_TEXT_FORMAT = "+ {0} Food: {1}";
-    const string FOOD_LOSS_TEXT_FORMAT = "- {0} Food: {1}";
-    const string FOOD_TEXT = "Food ";
+    const string FOOD_GAIN_TEXT_FORMAT = "+ {0} Health: {1}";
+    const string FOOD_LOSS_TEXT_FORMAT = "- {0} Health: {1}";
+    const string FOOD_TEXT = "Health ";
 
     public int wallDamage = DEFAULT_WALL_DAMAGE;
     public int pointsPerFood = DEFAULT_FOOD_POINTS;
@@ -36,7 +36,7 @@ public class PlayerController : MovingObject
     protected override void Start()
     {
         //Get a component reference to the Player's animator component
-        animator = GetComponent<Animator>();
+       // animator = GetComponent<Animator>();
 
         //Get the current food point total stored in GameManager.instance between levels.
         food = GameManager.instance.playerFoodPoints;
@@ -164,7 +164,7 @@ public class PlayerController : MovingObject
         hitWall.DamageWall(wallDamage);
 
         // Set the attack trigger of the player's animation controller in order to play the player's attack animation.
-        animator.SetTrigger("playerChop");
+       // animator.SetTrigger("playerChop");
     }
 
     // OnTriggerEnter2D is sent when another object enters a trigger collider attached to this object (2D physics only).
@@ -202,7 +202,9 @@ public class PlayerController : MovingObject
     private void Restart()
     {
         // Load the last scene loaded, in this case Main, the only scene in the game.
+      
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+       
     }
 
     // LoseFood is called when an enemy attacks the player.
@@ -210,7 +212,7 @@ public class PlayerController : MovingObject
     public void LoseFood(int loss)
     {
         // Set the trigger for the player animator to transition to the playerHit animation.
-        animator.SetTrigger("playerHit");
+       // animator.SetTrigger("playerHit");
 
         // Subtract lost food points from the players total.
         food -= loss;

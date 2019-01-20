@@ -8,15 +8,15 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications: []
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 0}
+  m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1000012629263902}
-  m_IsPrefabParent: 1
+  m_IsPrefabAsset: 1
 --- !u!1 &1000012629263902
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 4000011348733812}
   - component: {fileID: 114000010938604208}
@@ -31,7 +31,7 @@ GameObject:
 --- !u!4 &4000011348733812
 Transform:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012629263902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -44,7 +44,7 @@ Transform:
 --- !u!114 &114000010938604208
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012629263902}
   m_Enabled: 1
@@ -56,10 +56,11 @@ MonoBehaviour:
   turnDelay: 0.1
   playerFoodPoints: 100
   playersTurn: 1
+  level: 1
 --- !u!114 &114000011663988124
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012629263902}
   m_Enabled: 1
@@ -67,8 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b94dd2f87e74076a145d1ee043d970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  columns: 8
-  rows: 8
+  columns: 12
+  rows: 12
   wallCount:
     minimum: 5
     maximum: 9
@@ -83,8 +84,6 @@ MonoBehaviour:
   - {fileID: 127736, guid: 4cdf8ac85eff446d0a8fefbdc8c6569f, type: 2}
   - {fileID: 137908, guid: 41775b29042354678bcd58bb1a75871e, type: 2}
   - {fileID: 109612, guid: 04993e7a7b0514f0c8857ff106529ce1, type: 2}
-  - {fileID: 125636, guid: 74398dca0c1f64f34aab8ba7bdb6c527, type: 2}
-  - {fileID: 110520, guid: 5535fd6cd705e4a79a1d5a4f114de5dc, type: 2}
   wallTiles:
   - {fileID: 110520, guid: b86334000bc0f47ba8dd33ea88cfcdb1, type: 2}
   - {fileID: 110520, guid: 741804431f4d341cdae1f15b3896aeff, type: 2}
@@ -99,6 +98,8 @@ MonoBehaviour:
   - {fileID: 110520, guid: 46e8bf4bf645a47e3ae1b60c7e18418c, type: 2}
   enemyTiles:
   - {fileID: 1000011100120258, guid: 8c14a61ba26934dabbb9486e27d7ea11, type: 2}
+  - {fileID: 1000011604348330, guid: 4278c8cef4cc84d7ab7f5e304a1b6f1d, type: 2}
+  - {fileID: 1000011604348330, guid: 4278c8cef4cc84d7ab7f5e304a1b6f1d, type: 2}
   - {fileID: 1000011604348330, guid: 4278c8cef4cc84d7ab7f5e304a1b6f1d, type: 2}
   outerWallTiles:
   - {fileID: 110520, guid: 7094f72151ec74f569c4e03f1ec0f8e7, type: 2}
